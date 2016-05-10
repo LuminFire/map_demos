@@ -1,7 +1,7 @@
 /* Copyright 2016, Cimbura.com, Licensed under the BSD 2-Clause License */
 var gmap,infoWindow;
 function make_google_map() {
-	gmap = new google.maps.Map(document.getElementById('google_map_4321'), {
+	gmap = new google.maps.Map(document.getElementById('google_map_4312'), {
 		center: {lat: 45.08187481614703, lng: -93.24516123963815},
 		zoom: 13
 	});
@@ -22,7 +22,7 @@ function make_google_map() {
 
 var lmap;
 function make_leaflet_map(){
-	lmap = L.map('leaflet_map_4321').setView([45.08187481614703, -93.24516123963815], 13);
+	lmap = L.map('leaflet_map_4312').setView([45.08187481614703, -93.24516123963815], 13);
 
 	var streets = L.tileLayer('//otile{s}' + (window.location.protocol == 'https:' ? '-s' : '') + '.mqcdn.com/tiles/1.0.0/map/{z}/{x}/{y}.png',{
 		subdomains: [1,2,3,4],

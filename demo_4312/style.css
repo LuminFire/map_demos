@@ -4,14 +4,14 @@ body,html {
 	height: 100%;
 }
 
-#google_map_4321 {
+#google_map_4312 {
 	width: 400px !important;
 	height: 400px !important;
 	display: inline-block;
 	margin: 20px;
 }
 
-#leaflet_map_4321 {
+#leaflet_map_4312 {
 	width: 400px !important;
 	height: 400px !important;
 	display: inline-block;
