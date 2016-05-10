@@ -1,3 +1,4 @@
+/* Copyright 2016, Cimbura.com, Licensed under the BSD 2-Clause License */
 var gmap,infoWindow;
 function make_google_map() {
 	gmap = new google.maps.Map(document.getElementById('google_map_4321'), {
