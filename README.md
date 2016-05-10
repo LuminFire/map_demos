@@ -15,3 +15,9 @@ Individual libraries may have their own licenses or copyright statements which t
 usage statement does not override. 
 
 A link back to Cimbura.com or this GitHub repository is appreciated (but not required).
+
+Demos
+-----
+
+These demos are periodically pushed to our [Github Pages](https://cimburadotcom.github.io/map_demos/)
+and most of them should also link to the blog post or demo that they were written for on our blog. 
