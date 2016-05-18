@@ -28,12 +28,12 @@ var baseLayers = {
 	'black_and_white' : {
 		// Black and white maps
 		'CartoDB Positron' : L.tileLayer.provider('CartoDB.Positron'),
-		'OpenStreetMap Black and White': L.tileLayer.provider('OpenStreetMap.BlackAndWhite'),
-		'Esri WorldGrayCanvas': L.tileLayer.provider('Esri.WorldGrayCanvas'),
-		'Stamen Toner': L.tileLayer.provider('Stamen.Toner'),
 		'CartoDB Positron No Labels' : L.tileLayer.provider('CartoDB.PositronNoLabels'),
 		'CartoDB Dark Matter' : L.tileLayer.provider('CartoDB.DarkMatter'),
 		'CartoDB Dark Matter No Labels' : L.tileLayer.provider('CartoDB.DarkMatterNoLabels'),
+		'OpenStreetMap Black and White': L.tileLayer.provider('OpenStreetMap.BlackAndWhite'),
+		'Esri WorldGrayCanvas': L.tileLayer.provider('Esri.WorldGrayCanvas'),
+		'Stamen Toner': L.tileLayer.provider('Stamen.Toner'),
 	},
 
 	'topoish' : {
@@ -51,9 +51,12 @@ var baseLayers = {
 	'other' : {
 		// Other
 		'Stamen Watercolor': L.tileLayer.provider('Stamen.Watercolor'),
-		'MapBox Custom Funky Pink': new L.TileLayer('https://api.mapbox.com/styles/v1/stuporglue/cijy1ed8a00qr94kq2oefs051/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoic3R1cG9yZ2x1ZSIsImEiOiJKX3BMQWpVIn0.0mKeLL8tOd0u6khpQ5KlWg', { 'attribution': 'Imagery from <a href="http://mapbox.com/about/maps/">MapBox</a> &mdash; ' + 'Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>', 'subdomains': 'abcd' }),
+		'CartoDB World Antique' : L.tileLayer.provider('CartoDBAlt.WorldAntique'),
+		'CartoDB FlatBlue' : L.tileLayer.provider('CartoDBAlt.FlatBlue'),
+		'CartoDB Midnight Commander' : L.tileLayer.provider('CartoDBAlt.MidnightCommander'),
 		'Thunderforest OpenCycleMap': L.tileLayer.provider('Thunderforest.OpenCycleMap'),
 		'Thunderforest Transport': L.tileLayer.provider('Thunderforest.Transport'),
+		'MapBox Custom Funky Pink': new L.TileLayer('https://api.mapbox.com/styles/v1/stuporglue/cijy1ed8a00qr94kq2oefs051/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoic3R1cG9yZ2x1ZSIsImEiOiJKX3BMQWpVIn0.0mKeLL8tOd0u6khpQ5KlWg', { 'attribution': 'Imagery from <a href="http://mapbox.com/about/maps/">MapBox</a> &mdash; ' + 'Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>', 'subdomains': 'abcd' }),
 	}
 };
 
