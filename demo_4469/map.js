@@ -27,9 +27,9 @@ var baseLayers = {
 
 	'black_and_white' : {
 		// Black and white maps
+		'CartoDB Positron' : L.tileLayer.provider('CartoDB.Positron'),
 		'OpenStreetMap Black and White': L.tileLayer.provider('OpenStreetMap.BlackAndWhite'),
 		'Esri WorldGrayCanvas': L.tileLayer.provider('Esri.WorldGrayCanvas'),
-		'CartoDB Positron' : L.tileLayer.provider('CartoDB.Positron'),
 		'Stamen Toner': L.tileLayer.provider('Stamen.Toner'),
 		'CartoDB Positron No Labels' : L.tileLayer.provider('CartoDB.PositronNoLabels'),
 		'CartoDB Dark Matter' : L.tileLayer.provider('CartoDB.DarkMatter'),
@@ -50,28 +50,30 @@ var baseLayers = {
 
 	'other' : {
 		// Other
-		'MapBox Custom Funky Pink': new L.TileLayer('https://api.mapbox.com/styles/v1/stuporglue/cijy1ed8a00qr94kq2oefs051/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoic3R1cG9yZ2x1ZSIsImEiOiJKX3BMQWpVIn0.0mKeLL8tOd0u6khpQ5KlWg', { 'attribution': 'Imagery from <a href="http://mapbox.com/about/maps/">MapBox</a> &mdash; ' + 'Map data {attribution.OpenStreetMap}', 'subdomains': 'abcd' }),
-			'Stamen Watercolor': L.tileLayer.provider('Stamen.Watercolor'),
-			'Thunderforest OpenCycleMap': L.tileLayer.provider('Thunderforest.OpenCycleMap'),
-			'Thunderforest Transport': L.tileLayer.provider('Thunderforest.Transport'),
+		'Stamen Watercolor': L.tileLayer.provider('Stamen.Watercolor'),
+		'MapBox Custom Funky Pink': new L.TileLayer('https://api.mapbox.com/styles/v1/stuporglue/cijy1ed8a00qr94kq2oefs051/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoic3R1cG9yZ2x1ZSIsImEiOiJKX3BMQWpVIn0.0mKeLL8tOd0u6khpQ5KlWg', { 'attribution': 'Imagery from <a href="http://mapbox.com/about/maps/">MapBox</a> &mdash; ' + 'Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>', 'subdomains': 'abcd' }),
+		'Thunderforest OpenCycleMap': L.tileLayer.provider('Thunderforest.OpenCycleMap'),
+		'Thunderforest Transport': L.tileLayer.provider('Thunderforest.Transport'),
 	}
 };
 
 var mapMapping = {
-	'leaflet_4469_street' : 'streetmaps',
-	'leaflet_4469_aerial' : 'aerial_maps',
-	'leaflet_4469_bw' : 'black_and_white',
-	'leaflet_4469_topo' : 'topoish',
-	'leaflet_4469_other' : 'other',
+	'leaflet_4469_street' : {'zoom':10, 'center': [32.764, -96.85], 'basemaps': 'streetmaps'},
+	'leaflet_4469_aerial' : {'zoom':6,  'center': [60.23, -149.00], 'basemaps': 'aerial_maps'},
+	'leaflet_4469_bw' :		{'zoom':10, 'center': [33.81, -118.23], 'basemaps': 'black_and_white'},
+	'leaflet_4469_topo' :	{'zoom':7,  'center': [20.50, -156.71], 'basemaps': 'topoish'},
+	'leaflet_4469_other' :	{'zoom':1,  'center': [35.46, -90.703], 'basemaps': 'other'},
 }
 
 for(var m in mapMapping){
 	var ourMap = L.map(m , {
-		center: [32.764, -96.85],
-		zoom: 10,
+		center: mapMapping[m].center,
+		zoom: mapMapping[m].zoom,
 	});
 
-	var ourBaseLayers = baseLayers[mapMapping[m]];
+	mapMapping[m].map = ourMap;
+
+	var ourBaseLayers = baseLayers[mapMapping[m].basemaps];
 	for(var bm in ourBaseLayers){
 		ourBaseLayers[bm].addTo(ourMap);
 		break;
