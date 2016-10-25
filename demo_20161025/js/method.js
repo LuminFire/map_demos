@@ -1,3 +1,4 @@
+var baseurl = baseurl || '';
 // Customization Code
 // We add a new function called *crawl* to the Marker object
 L.Marker.include({crawl: function(){
@@ -14,7 +15,7 @@ L.Marker.include({crawl: function(){
 // Add some spiders code
 var spiders = [];
 var spider,lat,lng;
-var spiderIcon = new L.Icon({iconUrl:'img/spider.png'});
+var spiderIcon = new L.Icon({iconUrl: baseurl + 'img/spider.png'});
 
 for(var i = 0;i<20;i++){
     lat = Math.random()*180 - 90;
